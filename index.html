@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Marie Stems Workshop | Learn the Signature Style Arrangement</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --black: #0a0a0a;
+            --white: #ffffff;
+            --red: #8b0000;
+            --red-light: #a52a2a;
+            --cream: #faf8f5;
+            --gray: #666;
+        }
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background-color: var(--black);
+            color: var(--white);
+            line-height: 1.6;
+        }
+
+        /* Hero Section */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 2rem;
+            background: linear-gradient(135deg, var(--black) 0%, #1a0a0a 50%, var(--black) 100%);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="50" cy="50" r="2" fill="%238b0000" opacity="0.1"/></svg>');
+            background-size: 50px 50px;
+            opacity: 0.5;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 1;
+            max-width: 800px;
+        }
+
+        .logo {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1rem;
+            letter-spacing: 8px;
+            text-transform: uppercase;
+            color: var(--red);
+            margin-bottom: 2rem;
+            opacity: 0.9;
+        }
+
+        h1 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: clamp(2.5rem, 8vw, 5rem);
+            font-weight: 600;
+            line-height: 1.1;
+            margin-bottom: 1.5rem;
+            letter-spacing: -1px;
+        }
+
+        .tagline {
+            font-size: 1.1rem;
+            font-weight: 300;
+            color: rgba(255,255,255,0.8);
+            margin-bottom: 3rem;
+            max-width: 500px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .price-tag {
+            display: inline-block;
+            background: var(--red);
+            color: var(--white);
+            padding: 0.75rem 2rem;
+            font-size: 1.5rem;
+            font-weight: 600;
+            letter-spacing: 2px;
+            margin-bottom: 2rem;
+        }
+
+        .cta-btn {
+            display: inline-block;
+            background: var(--white);
+            color: var(--black);
+            padding: 1rem 3rem;
+            font-size: 0.9rem;
+            font-weight: 600;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            border: 2px solid var(--white);
+        }
+
+        .cta-btn:hover {
+            background: transparent;
+            color: var(--white);
+        }
+
+        /* Rose decoration */
+        .rose-accent {
+            width: 60px;
+            height: 60px;
+            margin: 3rem auto;
+            opacity: 0.6;
+        }
+
+        /* What's Included */
+        .included {
+            background: var(--cream);
+            color: var(--black);
+            padding: 6rem 2rem;
+        }
+
+        .section-title {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 2.5rem;
+            text-align: center;
+            margin-bottom: 3rem;
+            color: var(--black);
+        }
+
+        .included-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .included-item {
+            text-align: center;
+            padding: 2rem;
+            border: 1px solid rgba(139, 0, 0, 0.2);
+            transition: all 0.3s ease;
+        }
+
+        .included-item:hover {
+            border-color: var(--red);
+            transform: translateY(-5px);
+        }
+
+        .included-icon {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .included-item h3 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.3rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .included-item p {
+            font-size: 0.9rem;
+            color: var(--gray);
+        }
+
+        /* Who It's For */
+        .audience {
+            background: var(--black);
+            padding: 6rem 2rem;
+            text-align: center;
+        }
+
+        .audience-cards {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 2rem;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .audience-card {
+            flex: 1;
+            min-width: 280px;
+            max-width: 350px;
+            padding: 2.5rem 2rem;
+            border: 1px solid rgba(255,255,255,0.1);
+            transition: all 0.3s ease;
+        }
+
+        .audience-card:hover {
+            border-color: var(--red);
+        }
+
+        .audience-card h3 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: var(--red-light);
+        }
+
+        .audience-card p {
+            font-size: 0.95rem;
+            color: rgba(255,255,255,0.7);
+        }
+
+        /* Booking Section */
+        .booking {
+            background: linear-gradient(180deg, #1a0a0a 0%, var(--black) 100%);
+            padding: 6rem 2rem;
+            text-align: center;
+        }
+
+        .booking-info {
+            max-width: 600px;
+            margin: 0 auto 3rem;
+        }
+
+        .booking-info p {
+            margin-bottom: 1rem;
+            color: rgba(255,255,255,0.8);
+        }
+
+        .location {
+            display: inline-block;
+            margin-top: 1.5rem;
+            padding: 1rem 2rem;
+            border: 1px solid rgba(255,255,255,0.2);
+            font-size: 0.9rem;
+        }
+
+        .location strong {
+            display: block;
+            color: var(--red-light);
+            margin-bottom: 0.5rem;
+            letter-spacing: 2px;
+            font-size: 0.75rem;
+        }
+
+        /* Footer */
+        footer {
+            background: var(--black);
+            border-top: 1px solid rgba(255,255,255,0.1);
+            padding: 3rem 2rem;
+            text-align: center;
+        }
+
+        .footer-logo {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.5rem;
+            letter-spacing: 4px;
+            margin-bottom: 1rem;
+        }
+
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-bottom: 2rem;
+            flex-wrap: wrap;
+        }
+
+        .footer-links a {
+            color: rgba(255,255,255,0.6);
+            text-decoration: none;
+            font-size: 0.85rem;
+            letter-spacing: 1px;
+            transition: color 0.3s ease;
+        }
+
+        .footer-links a:hover {
+            color: var(--red-light);
+        }
+
+        .copyright {
+            font-size: 0.75rem;
+            color: rgba(255,255,255,0.4);
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero {
+                padding: 4rem 1.5rem;
+            }
+            
+            .logo {
+                font-size: 0.8rem;
+                letter-spacing: 4px;
+            }
+
+            .price-tag {
+                font-size: 1.2rem;
+                padding: 0.5rem 1.5rem;
+            }
+
+            .included, .audience, .booking {
+                padding: 4rem 1.5rem;
+            }
+
+            .section-title {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <p class="logo">Marie Stems Floral</p>
+            <h1>The Signature Style Workshop</h1>
+            <p class="tagline">Master the art of luxury floral design. Learn the Marie Stems signature arrangement in an intimate, hands-on experience.</p>
+            <div class="price-tag">$175</div>
+            <br>
+            <a href="#book" class="cta-btn">Book Your Seat</a>
+        </div>
+    </section>
+
+    <!-- What's Included -->
+    <section class="included">
+        <h2 class="section-title">What's Included</h2>
+        <div class="included-grid">
+            <div class="included-item">
+                <div class="included-icon">🌹</div>
+                <h3>Premium Florals</h3>
+                <p>Hand-selected, luxury stems including our signature red roses</p>
+            </div>
+            <div class="included-item">
+                <div class="included-icon">✂️</div>
+                <h3>Professional Tools</h3>
+                <p>All tools provided — floral shears, tape, foam, and vessels</p>
+            </div>
+            <div class="included-item">
+                <div class="included-icon">📋</div>
+                <h3>Step-by-Step Guidance</h3>
+                <p>Expert instruction from concept to finished arrangement</p>
+            </div>
+            <div class="included-item">
+                <div class="included-icon">🥂</div>
+                <h3>Light Refreshments</h3>
+                <p>Complimentary beverages and bites while you create</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Who It's For -->
+    <section class="audience">
+        <h2 class="section-title" style="color: white;">Who This Is For</h2>
+        <div class="audience-cards">
+            <div class="audience-card">
+                <h3>Aspiring Florists</h3>
+                <p>You're new to the industry and want to learn professional techniques from a luxury brand. Build your foundation with real skills.</p>
+            </div>
+            <div class="audience-card">
+                <h3>Hobby Seekers</h3>
+                <p>You love flowers and want to create something beautiful with your hands. No experience needed — just bring your creativity.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Booking Section -->
+    <section class="booking" id="book">
+        <h2 class="section-title" style="color: white;">Book Your Workshop</h2>
+        <div class="booking-info">
+            <p><strong>1-on-1 Sessions Available</strong></p>
+            <p>Each workshop is a private, personalized experience tailored to your pace and skill level.</p>
+            <div class="location">
+                <strong>Location</strong>
+                5925 Malvern Avenue<br>
+                Philadelphia, PA
+            </div>
+        </div>
+        <a href="https://calendar.apple.com" target="_blank" class="cta-btn" style="margin-bottom: 1rem;">
+            Book via iCal
+        </a>
+        <p style="margin-top: 2rem; font-size: 0.85rem; color: rgba(255,255,255,0.5);">
+            Questions? <a href="mailto:hello@mariestems.com" style="color: var(--red-light);">hello@mariestems.com</a>
+        </p>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-logo">Marie Stems Floral</div>
+        <div class="footer-links">
+            <a href="https://marie-stems.square.site/" target="_blank">Shop</a>
+            <a href="https://instagram.com" target="_blank">Instagram</a>
+            <a href="https://tiktok.com" target="_blank">TikTok</a>
+        </div>
+        <p class="copyright">© 2026 Marie Stems Floral. Philadelphia, PA.</p>
+    </footer>
+
+</body>
+</html>
