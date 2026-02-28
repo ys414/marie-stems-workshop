@@ -19,47 +19,31 @@
             --white: #ffffff;
             --red: #8b0000;
             --red-light: #a52a2a;
-            --cream: #faf8f5;
             --gray: #666;
+            --light-gray: #f5f5f5;
         }
 
         body {
             font-family: 'Montserrat', sans-serif;
-            background-color: var(--black);
-            color: var(--white);
+            background-color: var(--white);
+            color: var(--black);
             line-height: 1.6;
         }
 
         /* Hero Section */
         .hero {
-            min-height: 100vh;
+            min-height: 80vh;
             display: flex;
             flex-direction: column;
             justify-content: center;
             align-items: center;
             text-align: center;
-            padding: 2rem;
-            background: linear-gradient(135deg, var(--black) 0%, #1a0a0a 50%, var(--black) 100%);
-            position: relative;
-            overflow: hidden;
-        }
-
-        .hero::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="50" cy="50" r="2" fill="%238b0000" opacity="0.1"/></svg>');
-            background-size: 50px 50px;
-            opacity: 0.5;
+            padding: 4rem 2rem;
+            background-color: var(--white);
         }
 
         .hero-content {
-            position: relative;
-            z-index: 1;
-            max-width: 800px;
+            max-width: 700px;
         }
 
         .logo {
@@ -69,23 +53,23 @@
             text-transform: uppercase;
             color: var(--red);
             margin-bottom: 2rem;
-            opacity: 0.9;
         }
 
         h1 {
             font-family: 'Cormorant Garamond', serif;
-            font-size: clamp(2.5rem, 8vw, 5rem);
+            font-size: clamp(2.5rem, 8vw, 4rem);
             font-weight: 600;
             line-height: 1.1;
             margin-bottom: 1.5rem;
             letter-spacing: -1px;
+            color: var(--black);
         }
 
         .tagline {
             font-size: 1.1rem;
             font-weight: 300;
-            color: rgba(255,255,255,0.8);
-            margin-bottom: 3rem;
+            color: var(--gray);
+            margin-bottom: 2rem;
             max-width: 500px;
             margin-left: auto;
             margin-right: auto;
@@ -93,7 +77,7 @@
 
         .price-tag {
             display: inline-block;
-            background: var(--red);
+            background: var(--black);
             color: var(--white);
             padding: 0.75rem 2rem;
             font-size: 1.5rem;
@@ -104,8 +88,8 @@
 
         .cta-btn {
             display: inline-block;
-            background: var(--white);
-            color: var(--black);
+            background: var(--black);
+            color: var(--white);
             padding: 1rem 3rem;
             font-size: 0.9rem;
             font-weight: 600;
@@ -113,151 +97,135 @@
             text-transform: uppercase;
             text-decoration: none;
             transition: all 0.3s ease;
-            border: 2px solid var(--white);
+            border: 2px solid var(--black);
         }
 
         .cta-btn:hover {
-            background: transparent;
-            color: var(--white);
-        }
-
-        /* Rose decoration */
-        .rose-accent {
-            width: 60px;
-            height: 60px;
-            margin: 3rem auto;
-            opacity: 0.6;
-        }
-
-        /* What's Included */
-        .included {
-            background: var(--cream);
+            background: var(--white);
             color: var(--black);
-            padding: 6rem 2rem;
+        }
+
+        /* Section Styling */
+        .section {
+            padding: 4rem 2rem;
+            background-color: var(--white);
         }
 
         .section-title {
             font-family: 'Cormorant Garamond', serif;
-            font-size: 2.5rem;
+            font-size: 2rem;
             text-align: center;
-            margin-bottom: 3rem;
+            margin-bottom: 2rem;
             color: var(--black);
         }
 
-        .included-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 2rem;
-            max-width: 1000px;
+        .section-content {
+            max-width: 600px;
             margin: 0 auto;
-        }
-
-        .included-item {
             text-align: center;
-            padding: 2rem;
-            border: 1px solid rgba(139, 0, 0, 0.2);
-            transition: all 0.3s ease;
         }
 
-        .included-item:hover {
-            border-color: var(--red);
-            transform: translateY(-5px);
+        /* What's Included - Stacked */
+        .included-list {
+            list-style: none;
+            max-width: 500px;
+            margin: 0 auto;
+            text-align: left;
         }
 
-        .included-icon {
-            font-size: 2.5rem;
-            margin-bottom: 1rem;
+        .included-list li {
+            padding: 1.25rem 0;
+            border-bottom: 1px solid #eee;
+            font-size: 0.95rem;
         }
 
-        .included-item h3 {
+        .included-list li:last-child {
+            border-bottom: none;
+        }
+
+        .included-list strong {
+            display: block;
             font-family: 'Cormorant Garamond', serif;
-            font-size: 1.3rem;
-            margin-bottom: 0.5rem;
+            font-size: 1.2rem;
+            margin-bottom: 0.25rem;
+            font-weight: 600;
         }
 
-        .included-item p {
-            font-size: 0.9rem;
+        /* Who It's For - Stacked */
+        .audience-section {
+            background-color: var(--light-gray);
+        }
+
+        .audience-block {
+            max-width: 500px;
+            margin: 0 auto 2rem;
+            text-align: center;
+        }
+
+        .audience-block:last-child {
+            margin-bottom: 0;
+        }
+
+        .audience-block h3 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.4rem;
+            margin-bottom: 0.75rem;
+            color: var(--black);
+        }
+
+        .audience-block p {
+            font-size: 0.95rem;
             color: var(--gray);
         }
 
-        /* Who It's For */
-        .audience {
-            background: var(--black);
-            padding: 6rem 2rem;
-            text-align: center;
-        }
-
-        .audience-cards {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 2rem;
-            max-width: 800px;
-            margin: 0 auto;
-        }
-
-        .audience-card {
-            flex: 1;
-            min-width: 280px;
-            max-width: 350px;
-            padding: 2.5rem 2rem;
-            border: 1px solid rgba(255,255,255,0.1);
-            transition: all 0.3s ease;
-        }
-
-        .audience-card:hover {
-            border-color: var(--red);
-        }
-
-        .audience-card h3 {
-            font-family: 'Cormorant Garamond', serif;
-            font-size: 1.5rem;
-            margin-bottom: 1rem;
-            color: var(--red-light);
-        }
-
-        .audience-card p {
-            font-size: 0.95rem;
-            color: rgba(255,255,255,0.7);
-        }
-
         /* Booking Section */
-        .booking {
-            background: linear-gradient(180deg, #1a0a0a 0%, var(--black) 100%);
-            padding: 6rem 2rem;
-            text-align: center;
+        .booking-section {
+            background-color: var(--white);
+            padding-bottom: 6rem;
         }
 
         .booking-info {
-            max-width: 600px;
-            margin: 0 auto 3rem;
+            max-width: 500px;
+            margin: 0 auto 2rem;
+            text-align: center;
         }
 
         .booking-info p {
-            margin-bottom: 1rem;
-            color: rgba(255,255,255,0.8);
+            margin-bottom: 0.75rem;
+            color: var(--gray);
         }
 
         .location {
             display: inline-block;
-            margin-top: 1.5rem;
-            padding: 1rem 2rem;
-            border: 1px solid rgba(255,255,255,0.2);
+            margin: 1.5rem auto;
+            padding: 1.5rem 2rem;
+            border: 1px solid #ddd;
             font-size: 0.9rem;
         }
 
         .location strong {
             display: block;
-            color: var(--red-light);
+            color: var(--black);
             margin-bottom: 0.5rem;
             letter-spacing: 2px;
             font-size: 0.75rem;
         }
 
+        .email-link {
+            color: var(--black);
+            text-decoration: none;
+            border-bottom: 1px solid var(--black);
+        }
+
+        .email-link:hover {
+            color: var(--red);
+            border-color: var(--red);
+        }
+
         /* Footer */
         footer {
             background: var(--black);
-            border-top: 1px solid rgba(255,255,255,0.1);
+            color: var(--white);
             padding: 3rem 2rem;
             text-align: center;
         }
@@ -266,7 +234,7 @@
             font-family: 'Cormorant Garamond', serif;
             font-size: 1.5rem;
             letter-spacing: 4px;
-            margin-bottom: 1rem;
+            margin-bottom: 1.5rem;
         }
 
         .footer-links {
@@ -286,7 +254,7 @@
         }
 
         .footer-links a:hover {
-            color: var(--red-light);
+            color: var(--white);
         }
 
         .copyright {
@@ -297,6 +265,7 @@
         /* Responsive */
         @media (max-width: 768px) {
             .hero {
+                min-height: auto;
                 padding: 4rem 1.5rem;
             }
             
@@ -310,12 +279,16 @@
                 padding: 0.5rem 1.5rem;
             }
 
-            .included, .audience, .booking {
-                padding: 4rem 1.5rem;
+            .section {
+                padding: 3rem 1.5rem;
             }
 
             .section-title {
-                font-size: 2rem;
+                font-size: 1.75rem;
+            }
+
+            .included-list li {
+                padding: 1rem 0;
             }
         }
     </style>
@@ -335,50 +308,44 @@
     </section>
 
     <!-- What's Included -->
-    <section class="included">
+    <section class="section">
         <h2 class="section-title">What's Included</h2>
-        <div class="included-grid">
-            <div class="included-item">
-                <div class="included-icon">🌹</div>
-                <h3>Premium Florals</h3>
-                <p>Hand-selected, luxury stems including our signature red roses</p>
-            </div>
-            <div class="included-item">
-                <div class="included-icon">✂️</div>
-                <h3>Professional Tools</h3>
-                <p>All tools provided — floral shears, tape, foam, and vessels</p>
-            </div>
-            <div class="included-item">
-                <div class="included-icon">📋</div>
-                <h3>Step-by-Step Guidance</h3>
-                <p>Expert instruction from concept to finished arrangement</p>
-            </div>
-            <div class="included-item">
-                <div class="included-icon">🥂</div>
-                <h3>Light Refreshments</h3>
-                <p>Complimentary beverages and bites while you create</p>
-            </div>
-        </div>
+        <ul class="included-list">
+            <li>
+                <strong>Premium Florals</strong>
+                Hand-selected, luxury stems including our signature red roses
+            </li>
+            <li>
+                <strong>Professional Tools</strong>
+                All tools provided — floral shears, tape, foam, and vessels
+            </li>
+            <li>
+                <strong>Step-by-Step Guidance</strong>
+                Expert instruction from concept to finished arrangement
+            </li>
+            <li>
+                <strong>Light Refreshments</strong>
+                Complimentary beverages and bites while you create
+            </li>
+        </ul>
     </section>
 
     <!-- Who It's For -->
-    <section class="audience">
-        <h2 class="section-title" style="color: white;">Who This Is For</h2>
-        <div class="audience-cards">
-            <div class="audience-card">
-                <h3>Aspiring Florists</h3>
-                <p>You're new to the industry and want to learn professional techniques from a luxury brand. Build your foundation with real skills.</p>
-            </div>
-            <div class="audience-card">
-                <h3>Hobby Seekers</h3>
-                <p>You love flowers and want to create something beautiful with your hands. No experience needed — just bring your creativity.</p>
-            </div>
+    <section class="section audience-section">
+        <h2 class="section-title">Who This Is For</h2>
+        <div class="audience-block">
+            <h3>Aspiring Florists</h3>
+            <p>You're new to the industry and want to learn professional techniques from a luxury brand. Build your foundation with real skills.</p>
+        </div>
+        <div class="audience-block">
+            <h3>Hobby Seekers</h3>
+            <p>You love flowers and want to create something beautiful with your hands. No experience needed — just bring your creativity.</p>
         </div>
     </section>
 
     <!-- Booking Section -->
-    <section class="booking" id="book">
-        <h2 class="section-title" style="color: white;">Book Your Workshop</h2>
+    <section class="section booking-section" id="book">
+        <h2 class="section-title">Book Your Workshop</h2>
         <div class="booking-info">
             <p><strong>1-on-1 Sessions Available</strong></p>
             <p>Each workshop is a private, personalized experience tailored to your pace and skill level.</p>
@@ -388,11 +355,11 @@
                 Philadelphia, PA
             </div>
         </div>
-        <a href="https://calendar.apple.com" target="_blank" class="cta-btn" style="margin-bottom: 1rem;">
+        <a href="https://calendar.apple.com" target="_blank" class="cta-btn">
             Book via iCal
         </a>
-        <p style="margin-top: 2rem; font-size: 0.85rem; color: rgba(255,255,255,0.5);">
-            Questions? <a href="mailto:hello@mariestems.com" style="color: var(--red-light);">hello@mariestems.com</a>
+        <p style="margin-top: 2rem; font-size: 0.85rem; color: var(--gray);">
+            Questions? <a href="mailto:hello@mariestems.com" class="email-link">hello@mariestems.com</a>
         </p>
     </section>
 
@@ -404,7 +371,7 @@
             <a href="https://instagram.com" target="_blank">Instagram</a>
             <a href="https://tiktok.com" target="_blank">TikTok</a>
         </div>
-        <p class="copyright">© 2026 Marie Stems Floral. Philadelphia, PA.</p>
+        <p class="copyright">2026 Marie Stems Floral. Philadelphia, PA.</p>
     </footer>
 
 </body>
