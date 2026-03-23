@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Floral Workshop | Marie Stems Floral</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: #fff;
+            color: #000;
+            min-height: 100vh;
+            line-height: 1.5;
+        }
+
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 60px 24px;
+        }
+
+        @media (min-width: 768px) {
+            .container {
+                padding: 80px 40px;
+            }
+        }
+
+        /* Header */
+        .header {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .brand {
+            font-size: 0.7rem;
+            font-weight: 500;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            color: #000;
+            text-decoration: none;
+            margin-bottom: 8px;
+            display: block;
+        }
+
+        .title {
+            font-size: 2rem;
+            font-weight: 600;
+            letter-spacing: -0.5px;
+            margin-bottom: 12px;
+        }
+
+        @media (min-width: 768px) {
+            .title {
+                font-size: 2.5rem;
+            }
+        }
+
+        .subtitle {
+            font-size: 1rem;
+            color: #666;
+            font-weight: 300;
+        }
+
+        /* Price */
+        .price-section {
+            text-align: center;
+            margin-bottom: 40px;
+            padding-bottom: 40px;
+            border-bottom: 1px solid #eee;
+        }
+
+        .price {
+            font-size: 3rem;
+            font-weight: 600;
+            letter-spacing: -1px;
+        }
+
+        .price-note {
+            font-size: 0.85rem;
+            color: #888;
+            margin-top: 4px;
+        }
+
+        /* What's Included */
+        .included-section {
+            margin-bottom: 40px;
+        }
+
+        .section-label {
+            font-size: 0.7rem;
+            font-weight: 600;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: #888;
+            margin-bottom: 16px;
+        }
+
+        .included-list {
+            list-style: none;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 12px;
+        }
+
+        @media (max-width: 480px) {
+            .included-list {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .included-list li {
+            font-size: 0.9rem;
+            color: #333;
+            padding-left: 20px;
+            position: relative;
+        }
+
+        .included-list li::before {
+            content: '—';
+            position: absolute;
+            left: 0;
+            color: #000;
+        }
+
+        /* Form */
+        .booking-form {
+            margin-bottom: 40px;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            font-size: 0.75rem;
+            font-weight: 500;
+            letter-spacing: 0.5px;
+            margin-bottom: 8px;
+            color: #000;
+        }
+
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            padding: 14px 16px;
+            border: 1px solid #e0e0e0;
+            font-family: inherit;
+            font-size: 0.95rem;
+            background: #fff;
+            transition: border-color 0.2s;
+            border-radius: 4px;
+            -webkit-appearance: none;
+            appearance: none;
+        }
+
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: #000;
+        }
+
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 16px;
+        }
+
+        @media (max-width: 480px) {
+            .form-row {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .submit-btn {
+            width: 100%;
+            padding: 16px 24px;
+            background: #000;
+            color: #fff;
+            border: none;
+            font-family: inherit;
+            font-size: 0.9rem;
+            font-weight: 500;
+            letter-spacing: 1px;
+            cursor: pointer;
+            transition: background 0.2s;
+            border-radius: 4px;
+            margin-top: 8px;
+        }
+
+        .submit-btn:hover {
+            background: #222;
+        }
+
+        .submit-btn:disabled {
+            background: #ccc;
+            cursor: not-allowed;
+        }
+
+        /* Success */
+        .success-message {
+            display: none;
+            text-align: center;
+            padding: 40px 20px;
+            background: #fafafa;
+            border-radius: 4px;
+        }
+
+        .success-message h3 {
+            font-size: 1.25rem;
+            font-weight: 600;
+            margin-bottom: 8px;
+        }
+
+        .success-message p {
+            font-size: 0.9rem;
+            color: #666;
+        }
+
+        /* Spots Note */
+        .spots-note {
+            text-align: center;
+            font-size: 0.8rem;
+            color: #888;
+            margin-top: 16px;
+        }
+
+        /* Footer */
+        .footer {
+            text-align: center;
+            padding-top: 40px;
+            border-top: 1px solid #eee;
+        }
+
+        .footer p {
+            font-size: 0.75rem;
+            color: #999;
+            margin-bottom: 12px;
+        }
+
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 24px;
+        }
+
+        .footer-links a {
+            font-size: 0.8rem;
+            color: #000;
+            text-decoration: none;
+        }
+
+        .footer-links a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <!-- Header -->
+        <header class="header">
+            <a href="https://marie-stems.square.site/" class="brand">Marie Stems Floral</a>
+            <h1 class="title">Floral Workshop</h1>
+            <p class="subtitle">1-on-1 hands-on floral experience</p>
+        </header>
+
+        <!-- Price -->
+        <div class="price-section">
+            <div class="price">$175</div>
+            <div class="price-note">per person • private session</div>
+        </div>
+
+        <!-- What's Included -->
+        <div class="included-section">
+            <div class="section-label">What's Included</div>
+            <ul class="included-list">
+                <li>Your arrangement to take home</li>
+                <li>All tools & supplies</li>
+                <li>Premium fresh-cut flowers</li>
+                <li>Refreshments included</li>
+                <li>1-on-1 personalized instruction</li>
+                <li>2-hour session</li>
+            </ul>
+        </div>
+
+        <!-- Booking Form -->
+        <form class="booking-form" id="booking-form">
+            <div class="section-label">Book Your Session</div>
+
+            <div class="form-group">
+                <label for="name">Full Name</label>
+                <input type="text" id="name" name="name" placeholder="Jane Doe" required>
+            </div>
+
+            <div class="form-group">
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" placeholder="jane@email.com" required>
+            </div>
+
+            <div class="form-group">
+                <label for="phone">Phone</label>
+                <input type="tel" id="phone" name="phone" placeholder="(215) 555-0123">
+            </div>
+
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="date">Date</label>
+                    <input type="date" id="date" name="date" required>
+                </div>
+                <div class="form-group">
+                    <label for="time">Time</label>
+                    <select id="time" name="time" required>
+                        <option value="">Select</option>
+                        <option value="10:00 AM">10:00 AM</option>
+                        <option value="12:00 PM">12:00 PM</option>
+                        <option value="2:00 PM">2:00 PM</option>
+                        <option value="4:00 PM">4:00 PM</option>
+                    </select>
+                </div>
+            </div>
+
+            <button type="submit" class="submit-btn">Book Now</button>
+
+            <p class="spots-note">Limited spots available</p>
+
+            <!-- Success Message -->
+            <div class="success-message" id="success-message">
+                <h3>Request Submitted</h3>
+                <p>We'll confirm your booking within 24 hours.</p>
+            </div>
+        </form>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <p>© 2026 Marie Stems Floral</p>
+            <div class="footer-links">
+                <a href="https://instagram.com/mariestemsfloral" target="_blank">Instagram</a>
+                <a href="https://marie-stems.square.site/" target="_blank">Website</a>
+            </div>
+        </footer>
+    </div>
+
+    <script>
+        // Set minimum date to today
+        const dateInput = document.getElementById('date');
+        const today = new Date().toISOString().split('T')[0];
+        dateInput.setAttribute('min', today);
+
+        // Form submission
+        document.getElementById('booking-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const formData = {
+                name: document.getElementById('name').value,
+                email: document.getElementById('email').value,
+                phone: document.getElementById('phone').value,
+                date: document.getElementById('date').value,
+                time: document.getElementById('time').value
+            };
+
+            // Hide form elements
+            this.querySelectorAll('.form-group, .submit-btn, .spots-note, .section-label').forEach(el => {
+                el.style.display = 'none';
+            });
+
+            // Show success
+            document.getElementById('success-message').style.display = 'block';
+
+            console.log('Booking:', formData);
+        });
+    </script>
+
+</body>
+</html>
